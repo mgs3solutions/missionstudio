@@ -386,8 +386,8 @@ nav a:hover {
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       
-      <button class="login-btn">LOGIN</button>
-      <button onclick="openModal()" class="portfolio-login-btn">Sign In /Sign Upo</button>
+      u
+      <button onclick="openModal()" class="portfolio-login->Login</button>
 
     </nav>
   </header>
@@ -454,6 +454,42 @@ nav a:hover {
         </form>
     </div>
 </div>
+        <srcipt>
+        const modal = document.getElementById("authModal");
+const x = document.getElementById("login");
+const y = document.getElementById("register");
+const z = document.getElementById("btn");
+
+// Open the modal
+function openModal() {
+    modal.style.display = "flex";
+}
+
+// Close the modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Close modal if user clicks outside the white form box
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Form Switcher Functions
+function registerTab() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+}
+
+function loginTab() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+}
+        </srcipt>
 
 </body>
 </html>
