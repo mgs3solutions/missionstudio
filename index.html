@@ -1,408 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"
-  />
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Welcome to Mission Graphics Studio. We provide professional graphic design, branding, and digital solutions.">
   <meta name="keywords" content="Mission Graphics Studio, graphic design, branding, logo design, digital studio">
   <meta name="robots" content="index, follow">
 
-  
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mgs3solutions.github.io/">
   <meta property="og:title" content="Mission Graphics Studio">
   <meta property="og:description" content="Professional graphic design and digital solutions.">
 
-  <meta name="google-site-verification" content="BMtfiXa8JgAxAHyuhQIvNmnEIN72mVh4T8HiOYMIX5c" />
+  <meta name="google-site-verification" content="BMtfiXa8JgAxAHyuhQIvNmnEIN72mVh4T8HiOYMIX5c">
 
-  <title>MIssion Graphics Studio</title>
-  
+  <title>Mission Graphics Studio</title>
   
   <link rel="icon" href="Screenshot_20260722_072231_WhatsApp.jpg">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #120817; 
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #d31f2f; 
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo img {
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .portfolio-login-btn {
+      background-color: #ffffff;
+      color: #d32f2f;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .portfolio-login-btn:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
+
+    .hero-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .image-circle {
+      width: 150px;
+      height: 150px;
+      min-width: 150px; 
+      border-radius: 50%;
+      border: 4px solid #ff1744;
+      box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2a1535;
+    }
+
+    .image-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bio-box {
+      background: #1c0d25;
+      border-radius: 15px;
+      padding: 1.5rem;
+      border-top: 3px solid #ff1744;
+      width: 100%;
+    }
+
+    .bio-box h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .bio-box h3 {
+      font-size: 0.95rem;
+      color: #ff1744;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .bio-box p {
+      line-height: 1.6;
+      color: #d1c4e9;
+      font-size: 0.9rem;
+    }
+
+    /* Modal Overlay Styles */
+    .modal-overlay {
+      display: none; 
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-box {
+      width: 380px;
+      height: 480px;
+      position: relative;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #888;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
+
+    .button-box {
+      width: 220px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      background: #f1f1f1;
+    }
+
+    .toggle-btn {
+      padding: 10px 30px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+      font-weight: 600;
+      color: #333;
+      width: 110px;
+    }
+
+    #btn {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 110px;
+      height: 100%;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border-radius: 30px;
+      transition: 0.5s;
+    }
+
+    .input-group {
+      top: 130px;
+      position: absolute;
+      width: 280px;
+      transition: 0.5s;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 1px solid #999;
+      outline: none;
+      background: transparent;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .input-field:focus {
+      border-bottom-color: #ff4b2b;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      margin: 15px 0;
+      color: #555;
+    }
+
+    .checkbox-container input {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 11px 0;
+      cursor: pointer;
+      display: block;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: 0;
+      outline: none;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      margin-top: 10px;
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+
+    #login {
+      left: 50px;
+    }
+
+    #register {
+      left: 450px;
+    }
+
+    /* Tablet & Desktop Layout */
+    @media (min-width: 768px) {
+      .profile-card {
+        flex-direction: row;
+        padding: 2rem;
+        text-align: left;
+        gap: 0;
+      }
+
+      .image-circle {
+        width: 180px;
+        height: 175px;
+        min-width: 175px;
+        margin-right: -25px;
+        z-index: 2;
+      }
+
+      .bio-box {
+        border-top: none;
+        border-left: 3px solid #ff1744;
+        padding: 2rem 2rem 2rem 3.5rem;
+        z-index: 1;
+      }
+
+      .bio-box h1 {
+        font-size: 1.8rem;
+      }
+
+      .bio-box h3 {
+        font-size: 1rem;
+      }
+
+      .bio-box p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <style>
-     
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: #120817; 
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  background-color: #d31f2f; 
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
-
-nav a:hover {
-  opacity: 0.8;
-}
-
-.login-btn {
-  background-color: #ffffff;
-  color: #d32f2f;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-.login-btn:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.05);
-}
-
-.hero-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-}
-
-/* Profile Card: Stacks vertically by default on mobile */
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  gap: 1.5rem;
-  text-align: center;
-}
-
-.image-circle {
-  width: 150px;
-  height: 150px;
-  min-width: 150px; 
-  border-radius: 50%;
-  border: 4px solid #ff1744;
-  box-shadow: 0 0 20px rgba(255, 23, 68, 0.6);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2a1535;
-}
-
-.image-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-placeholder {
-  color: #b388ff;
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Bio Box */
-.bio-box {
-  background: #1c0d25;
-  border-radius: 15px;
-  padding: 1.5rem;
-  border-top: 3px solid #ff1744; /* Changed border to top for mobile layout */
-  border-left: none;
-  width: 100%;
-}
-
-.bio-box h1 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.bio-box h3 {
-  font-size: 0.95rem;
-  color: #ff1744;
-  margin-bottom: 1rem;
-  font-weight: 400;
-}
-
-.bio-box p {
-  line-height: 1.6;
-  color: #d1c4e9;
-  font-size: 0.9rem;
-}
-
-/* Media Query: Switches back to side-by-side layout on tablets and desktops (screens wider than 768px) */
-@media (min-width: 768px) {
-  .profile-card {
-    flex-direction: row;
-    padding: 2rem;
-    text-align: left;
-    gap: 0;
-  }
-
-  .image-circle {
-    width: 180px;
-    height: 175px;
-    min-width: 175px;
-    margin-right: -25px;
-    z-index: 2;
-  }
-
-  .bio-box {
-    border-top: none;
-    border-left: 3px solid #ff1744;
-    padding: 2rem 2rem 2rem 3.5rem;
-    z-index: 1;
-  }
-
-  .bio-box h1 {
-    font-size: 1.8rem;
-  }
-
-  .bio-box h3 {
-    font-size: 1rem;
-  }
-
-  .bio-box p {
-    font-size: 0.95rem;
-  }
-}
-.modal-overlay {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Dim background */
-    justify-content: center;
-    align-items: center;
-}
-
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #888;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.close-btn:hover {
-    color: #333;
-}
-
-
-.portfolio-login-btn {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.portfolio-login-btn:hover {
-    opacity: 0.9;
-}
-
-
-.form-box {
-    width: 380px;
-    height: 480px;
-    position: relative;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.button-box {
-    width: 220px;
-    margin: 0 auto;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    background: #f1f1f1;
-}
-
-.toggle-btn {
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-    font-weight: 600;
-    color: #333;
-    width: 110px;
-}
-
-#btn {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border-radius: 30px;
-    transition: 0.5s;
-}
-
-
-
-
-
-.soc
-
-.input-group {
-    top: 180px;
-    position: absolute;
-    width: 280px;
-    transition: 0.5s;
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px 0;
-    margin: 10px 0;
-    border: none;
-    border-bottom: 1px solid #999;
-    outline: none;
-    background: transparent;
-    font-size: 14px;
-}
-
-.input-field:focus {
-    border-bottom-color: #ff4b2b;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    margin: 15px 0;
-    color: #555;
-}
-
-.checkbox-container input {
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 11px 0;
-    cursor: pointer;
-    display: block;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    border: 0;
-    outline: none;
-    border-radius: 30px;
-    color: white;
-    font-weight: 600;
-    margin-top: 10px;
-    box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    opacity: 0.9;
-}
-
-#login {
-    left: 50px;
-}
-
-#Sign Up{
-    left: 450px;
-}
-
-
-  </style>
   <header>
-    <div class="logo"><img src="Screenshot_20260722_072231_WhatsApp.jpg" width="50" height="40"></div>
+    <div class="logo">
+      <img src="Screenshot_20260722_072231_WhatsApp.jpg" width="50" height="40" alt="Logo">
+    </div>
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
-      
-      u
-      <button onclick="openModal()" class="portfolio-login->Login</button>
-
+      <button onclick="openModal()" class="portfolio-login-btn">Login</button>
     </nav>
   </header>
 
-  
   <main class="hero-container">
     <div class="profile-card">
-      
-     
       <div class="image-circle">
-        
-        <div class="image-placeholder"><img src="IMG-20260723-WA0001.jpg"></div>
+        <img src="IMG-20260723-WA0001.jpg" alt="Joel Profile Picture">
       </div>
-
-      
       <div class="bio-box">
         <h1>Hello, I'm Joel</h1>
         <h3>Full-Stack Graphics and Website Designer</h3>
@@ -412,84 +358,77 @@ nav a:hover {
           services or get in touch!
         </p>
       </div>
-
     </div>
   </main>
 
-<div id="authModal" class="modal-overlay">
+  <!-- Authentication Modal -->
+  <div id="authModal" class="modal-overlay">
     <div class="form-box">
-        
-        <span class="close-btn" onclick="closeModal()">&times;</span>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
 
-        <div class="button-box">
-            <div id="btn"></div>
-            <button type="button" class="toggle-btn" onclick="loginTab()">Log In</button>
-            <button type="button" class="toggle-btn" onclick="registerTab()">Sign Up</button>
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="loginTab()">Log In</button>
+        <button type="button" class="toggle-btn" onclick="registerTab()">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login" class="input-group">
+        <input type="email" class="input-field" placeholder="Email Address" required>
+        <input type="password" class="input-field" placeholder="Password" required>
+        <div class="checkbox-container">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember Password</label>
         </div>
+        <button type="submit" class="submit-btn">Log In</button>
+      </form>
 
-      
-        
-
-        
-        <form id="login" class="input-group">
-            <input type="email" class="input-field" placeholder="Email Address" required>
-            <input type="password" class="input-field" placeholder="Password" required>
-            <div class="checkbox-container">
-                <input type="checkbox" id="remember">
-                <label for="remember">Remember Password</label>
-            </div>
-            <button type="submit" class="submit-btn">Log In</button>
-        </form>
-
-      
-        <form id="register" class="input-group">
-            <input type="text" class="input-field" placeholder="Full Name" required>
-            <input type="email" class="input-field" placeholder="Email Address" required>
-            <input type="password" class="input-field" placeholder="Create Password" required>
-            <div class="checkbox-container">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">T & C apply</label>
-            </div>
-            <button type="submit" class="submit-btn">Sign Up</button>
-        </form>
+      <!-- Register Form -->
+      <form id="register" class="input-group">
+        <input type="text" class="input-field" placeholder="Full Name" required>
+        <input type="email" class="input-field" placeholder="Email Address" required>
+        <input type="password" class="input-field" placeholder="Create Password" required>
+        <div class="checkbox-container">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">T & C apply</label>
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
     </div>
-</div>
-        <srcipt>
-        const modal = document.getElementById("authModal");
-const x = document.getElementById("login");
-const y = document.getElementById("register");
-const z = document.getElementById("btn");
+  </div>
 
-// Open the modal
-function openModal() {
-    modal.style.display = "flex";
-}
+  <script>
+    const modal = document.getElementById("authModal");
+    const x = document.getElementById("login");
+    const y = document.getElementById("register");
+    const z = document.getElementById("btn");
 
-// Close the modal
-function closeModal() {
-    modal.style.display = "none";
-}
-
-// Close modal if user clicks outside the white form box
-window.onclick = function(event) {
-    if (event.target == modal) {
-        closeModal();
+    function openModal() {
+        modal.style.display = "flex";
     }
-}
 
-// Form Switcher Functions
-function registerTab() {
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    z.style.left = "110px";
-}
+    function closeModal() {
+        modal.style.display = "none";
+    }
 
-function loginTab() {
-    x.style.left = "50px";
-    y.style.left = "450px";
-    z.style.left = "0px";
-}
-        </srcipt>
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    function registerTab() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+
+    function loginTab() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+    }
+  </script>
 
 </body>
 </html>
